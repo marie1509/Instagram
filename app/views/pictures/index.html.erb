@@ -1,0 +1,27 @@
+<h1>Instagram一覧ページ</h1>
+
+
+<% @pictures.each do |picture| %>
+  <!-- ユーザー情報
+  <tr>
+    <td><%= picture.content  %></td>
+  </tr> -->
+
+
+  <div>
+    <%= image_tag picture.image.url, size: "50 x 50" %>
+  </div>
+
+  <div>
+    <%= picture.content  %>
+    <span><%= link_to "詳細を見る", picture_path(picture.id)%></span>
+    <span><%= link_to "編集する", edit_picture_path(picture.id)%></span>
+    <span><%= link_to "削除する", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></span>
+    <!-- <span><%= link_to "お気に入りに登録", favorites_path(picture_id: picture.id), method: :post %></span> -->
+  </div>
+
+
+
+
+
+<% end %>

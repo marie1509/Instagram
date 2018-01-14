@@ -1,0 +1,9 @@
+<%= form_with(model: @picture, local: true,url: choose_new_or_edit ) do |form| %>
+
+  <div>
+    <%= form.file_field :image%>
+    <%= form.hidden_field :image_cashe %>
+    <%= form.text_area :content, placeholder: "Content" %>
+  </div>
+  <%= form.submit %>
+<% end %>
