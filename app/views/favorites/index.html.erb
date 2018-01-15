@@ -1,0 +1,24 @@
+<div class="whole_profile_and_favorite">
+  <div class="profile">
+
+  <% if current_user.icon.present? %>
+   <span><%= image_tag current_user.icon.image.url,  class:"profile_icon" %></span>
+  <% end %>
+
+   <span><%= current_user.name %></span>
+   <p><%= link_to "プロフィールを編集", edit_user_path(current_user.id) %></p>
+  </div>
+  
+<div class="my_pictures">
+  <div class="picture_or_favorite">
+  <span><%= link_to "投稿一覧", users_path %></span>
+  <span><%= link_to "お気に入り一覧", favorites_path %></span>
+  </div>
+
+  <div>
+    <% @favorites.each do |favorite| %>
+    <%= image_tag  favorite.picture.image.url, :size => "250" %>
+    <% end %>
+  </div>
+</div>
+</div>

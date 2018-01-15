@@ -1,0 +1,10 @@
+<div class="form_parent">
+<%= form_with(model: @icon, local: true) do |form| %>
+  <div class="form_child">
+    <p>プロフィール画像</p>
+    <%= form.file_field :image%>
+    <%= form.hidden_field :image_cashe %>
+  </div>
+  <%= form.submit %>
+<% end %>
+</div>

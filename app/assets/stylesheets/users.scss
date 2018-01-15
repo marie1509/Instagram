@@ -2,12 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.whole_form {
+  text-align: center;
+}
+
 div.common_form {
   border: 1px solid #e6e6e6;
   text-align: center;
-  
+  width: 30%;
+  min-height: 50%;
+  padding-bottom: 5%;
+  display: inline-block;
+  background-color: #fff;
 }
 
+div.each_form {
+  margin: 10px;
+}
+
+
 h1 {
+  text-align: center;
+}
+
+.profile {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5%;
+  display: inline-block;
+}
+
+.my_pictures {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: inline-block;
+}
+
+div.picture_or_favorite {
+  text-align: center;
+  height: 50px;
+}
+
+div.whole_profile_and_favorite{
   text-align: center;
 }

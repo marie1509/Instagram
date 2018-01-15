@@ -31,7 +31,7 @@ class PicturesController < ApplicationController
     @picture.user_id = current_user.id
     @picture.image.retrieve_from_cache! params[:cache][:image] if params[:cache][:image].present?
 
-   if @picture.save!
+   if @picture.save
      PictureMailer.picture_mail(@picture).deliver
      redirect_to pictures_path
    else

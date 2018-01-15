@@ -1,0 +1,30 @@
+<div class="whole_form">
+
+<div class="common_form">
+  <h1>プロフィール編集</h1>
+  <p><%= link_to "プロフィール写真を設定", new_icon_path %></p>
+  <%= form_with(model: @user, local: true) do |f| %>
+   <div class="each_form">
+    <%= f.text_field :name, :placeholder => "Name" %>
+  </div>
+
+  <div class="each_form">
+    <%= f.email_field :email, :placeholder => "Email" %>
+  </div>
+
+  <div class="each_form">
+    <%= f.password_field :password, :placeholder => "Password" %>
+  </div>
+
+  <div class="each_form">
+
+    <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
+  </div>
+
+  <div class="each_form">
+    <%= f.submit "Update profile" %>
+  </div>
+
+ <% end %>
+</div>
+</div>

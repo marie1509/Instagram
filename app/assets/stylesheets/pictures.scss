@@ -5,3 +5,71 @@
 html {
   height: 100%;
 }
+
+body {
+  background-color: #fafafa;
+}
+
+i.fa fa-instagram fa-3x {
+  margin-top: 10px;
+}
+
+p.logo {
+  font-size: 250%;
+  display:inline-block;
+}
+
+.article {
+  margin-left: 20%;
+}
+
+div.insta_whole_content {
+  margin-bottom: 50px;
+  border: 1px solid #ddd;
+  width : 500px;
+}
+
+
+
+div.insta_creater {
+  height: 50px;
+  vertical-align: center;
+}
+
+p {
+  vertical-align: middle;
+}
+
+.form_parent {
+  text-align: center;
+}
+
+.form_child {
+  display:inline-block;;
+}
+
+// .top_menu li.list_left {
+//   float: left;
+//   list-style: none;
+//   padding: 15px;
+//   margin-bottom: 0;
+// }
+
+.top_menu li.list_right {
+  float: right;
+  list-style: none;
+}
+
+li.list_right {
+  padding: 20px;
+  padding-right: 0;
+  list-style: none;
+  float: right;
+}
+//
+// li.list_right.separate {
+//   margin-left: 10px;
+//   margin-right: 10px;
+//   padding-right: 20px;
+//   padding-left: 20px;
+// }

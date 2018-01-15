@@ -5,20 +5,47 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid navbar-static-top">
+      <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+      <p class="logo" href="#"> Instagram</p>
+
+      <% if logged_in? %>
+      <ul class="top_menu">
+
+        <li class="list_right"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+        <li class="list_right"><%= link_to "Profile", users_path(current_user.id) %> /</li>
+
+        <li class="list_right"><%= link_to "新規投稿", new_picture_path %></li>
+        <li class="list_right"><%= link_to "Home", pictures_path %> /</li>
+
+        <% else %>
+        <li class="list_right"><%= link_to "Sign up", new_user_path %></li>
+        <li class="list_right"><%= link_to "Login", new_session_path %></li>
+      </ul>
+      <% end %>
+
+
+
+      <!-- <ul class="top_menu"> -->
+      <!-- <% if logged_in? %> -->
+
+      <!-- <% end %> -->
+     <!-- </ul> -->
+    </div>
+  </nav>
+
+
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+
+
     <%= yield %>
   </body>
 </html>

@@ -1,18 +1,20 @@
-<h3>以下の内容で投稿する</h3>
-<%= form_with(model: @picture, local: true) do |form| %>
+<div class="form_parent">
+<div class="form_child">
+  <h4>以下の内容で投稿する</h4>
+  <%= form_with(model: @picture, local: true) do |form| %>
+      <%= form.hidden_field :content %>
+    <div>
+      <p><%= image_tag @picture.image , :width => "50%" %></p>
+      <%= hidden_field_tag :"cache[image]", @picture.image.cache_name %>
+      <p>Content:<%= @picture.content %></p>
+    </div>
+    <%= form.submit "Create post" %>
+  <% end %>
+
+  <!-- 戻るボタンはform_forで作成することで、パラメーターを渡すことができる -->
+  <%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :content %>
-  <div>
-    <p><%= image_tag @picture.image  %></p>
-    <%= hidden_field_tag :"cache[image]", @picture.image.cache_name %>
-
-
-    <p>Content:<%= @picture.content %></p>
-  </div>
-  <%= form.submit "Create post" %>
-<% end %>
-
-<!-- 戻るボタンはform_forで作成することで、パラメーターを渡すことができる -->
-<%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.submit "Back" , name: 'back' %>
-<% end %>
+    <%= form.submit "Back" , name: 'back' %>
+  <% end %>
+</div>
+<div>

@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :pictures,  through: :favorites
+  has_one :icon
 
 # メールアドレスをDBに保存する直前に小文字にして、同じアドレスが登録されることを防ぐ
    before_save { email.downcase! }

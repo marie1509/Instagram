@@ -1,17 +1,21 @@
+<div class="whole_form">
 <div class="common_form">
   <h1>Log in</h1>
   <%= form_with(scope: :session, url: sessions_path) do |f| %>
 
-  <div>
+  <div class="each_form">
     <%= f.email_field :email, placeholder: 'E-mail' %>
   </div>
 
-  <div>
+  <div class="each_form">
     <%= f.password_field :password, placeholder: 'Password' %>
   </div>
 
-  <div>
+  <div class="each_form">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
 </div>
+</div>
+
+  

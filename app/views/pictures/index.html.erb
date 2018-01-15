@@ -1,27 +1,36 @@
-<h1>Instagram一覧ページ</h1>
-
-
+<div class="article">
 <% @pictures.each do |picture| %>
   <!-- ユーザー情報
   <tr>
     <td><%= picture.content  %></td>
   </tr> -->
-
-
-  <div>
-    <%= image_tag picture.image.url, size: "50 x 50" %>
+ <div class="insta_whole_content">
+  <div class="insta_creater">
+    <span><%= image_tag picture.user.icon.image.url, :class => "menu_icon" %></span>
+    <span><%= picture.user.name  %></span>
+  </div>
+  <div class="insta_image">
+    <%= image_tag picture.image.url, :width => "100%" %>
   </div>
 
-  <div>
-    <%= picture.content  %>
-    <span><%= link_to "詳細を見る", picture_path(picture.id)%></span>
+  <div class="insta_content">
+    <p><%= picture.content  %></p>
+    <!-- <span><%= link_to "詳細を見る", picture_path(picture.id)%></span> -->
+    <% if picture.user == current_user %>
     <span><%= link_to "編集する", edit_picture_path(picture.id)%></span>
     <span><%= link_to "削除する", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></span>
-    <!-- <span><%= link_to "お気に入りに登録", favorites_path(picture_id: picture.id), method: :post %></span> -->
+    <% end %>
+
+
+    <% @favorite = current_user.favorites.find_by(picture_id: picture.id) %>
+    <% unless picture.user == current_user %>
+     <% if @favorite.present? %>
+      <span><%= link_to 'お気に入り解除する', favorite_path(picture.id), method: :delete %></span>
+     <% else %>
+      <span><%= link_to 'お気に入りする', favorites_path(picture_id: picture.id),  method: :post %></span>
+     <% end %>
+    <% end %>
   </div>
-
-
-
-
-
+ </div>
 <% end %>
+</div>

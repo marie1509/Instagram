@@ -1,3 +1,6 @@
+<%= render 'user' %>
+<!-- <div class="whole_form">
+
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
@@ -12,28 +15,29 @@
 
 
 <div class="common_form">
-  <h1>Instagram</h1>
+  <h1>Sign up</h1>
   <%= form_with(model: @user, local: true) do |f| %>
-   <div>
+   <div class="each_form">
     <%= f.text_field :name, :placeholder => "Name" %>
   </div>
 
-  <div>
+  <div class="each_form">
     <%= f.email_field :email, :placeholder => "Email" %>
   </div>
 
-  <div>
+  <div class="each_form">
     <%= f.password_field :password, :placeholder => "Password" %>
   </div>
 
-  <div>
+  <div class="each_form">
 
     <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
   </div>
 
-  <div>
-    <%= f.submit "Create my account" %>
+  <div class="each_form">
+    <%= f.submit "Sign up" %>
   </div>
 
  <% end %>
 </div>
+</div> -->

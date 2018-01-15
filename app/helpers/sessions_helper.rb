@@ -5,6 +5,6 @@ module SessionsHelper
 
   def logged_in?
       #!はfalseを返す current_userは中に何か入っているか？という意味
-    !current_user.nil?
+    !current_user.nil?  
   end
 end
