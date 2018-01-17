@@ -6,7 +6,7 @@
   </tr> -->
  <div class="insta_whole_content">
   <div class="insta_creater">
-    <span><%= image_tag picture.user.icon.image.url, :class => "menu_icon" %></span>
+    <span><%= image_tag picture.user.icon.image.url, :class => "menu_icon" if picture.user.icon.present? %></span>
     <span><%= picture.user.name  %></span>
   </div>
   <div class="insta_image">
