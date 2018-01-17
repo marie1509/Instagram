@@ -1,5 +1,5 @@
 class Picture < ApplicationRecord
-  validates :content, presence: true, length: { maximum:2200 }
+  # validates :content, presence: true, length: { maximum:2200 }
   validates :image, presence: true
 
   belongs_to :user
